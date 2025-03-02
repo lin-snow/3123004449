@@ -1,12 +1,11 @@
 package main;
 
 import main.core.SimHashUtils;
-import main.core.TextPreprocessor;
 import main.utils.FileUtil;
 
 import java.io.FileNotFoundException;
 import java.math.BigInteger;
-import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {
