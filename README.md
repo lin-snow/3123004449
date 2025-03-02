@@ -9,8 +9,6 @@
 
 # PSP2.1
 
-这里发现邹欣老师的博客：[现代软件工程讲义 2 工程师的能力评估和发展](https://www.cnblogs.com/xinz/archive/2011/10/22/2220872.html)里的Postmortem & Process Improvement是拆分统计时间的，但是这里就按照
-
 | PSP2.1                                    | Personal Software Process Stages | 预估耗时（分钟） | 实际耗时（分钟） |
 |:------------------------------------------|:---------------------------------|:--------:|:--------:|
 | **Planning**                              | 计划                               |          |          |
@@ -24,10 +22,10 @@
 | · _Coding_                                | 具体编码                             |   120    |          |
 | · _Code Review_                           | 代码复审                             |    60    |          |
 | · _Test_                                  | 测试（自我测试，修改代码，提交修改）               |   180    |          |
-| **Reporting**                             | 报告                               |    90    |          |
-| **Test Report**                           | 测试报告                             |          |          |
-| **Size Measurement**                      | 计算工作量                            |    30    |          |
-| **Postmortem & Process Improvement Plan** | 事后总结, 并提出过程改进计划                  |          |          | 
+| **Reporting**                             | 报告                               |          |          |
+| · _Test Report_                           | 测试报告                             |    90    |          |
+| · _Size Measurement_                      | 计算工作量                            |    30    |          |
+| · _Postmortem & Process Improvement Plan_ | 事后总结, 并提出过程改进计划                  |    60    |          | 
 | **Total**                                 | 合计                               |          |          |
 
 ---
