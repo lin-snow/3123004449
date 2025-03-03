@@ -52,20 +52,20 @@ public class TextPreprocessor {
      * @return
      */
     public static String ToDBC(String input) {
+        if (input == null) return ""; // 处理 null 输入，与其他方法一致
         char[] c = input.toCharArray();
         for (int i = 0; i < c.length; i++) {
             if (c[i] == 12288) {
-                // 全角空格为12288， 半角空格为32
-                c[i] = (char) 32;
+                c[i] = (char) 32; // 全角空格转半角
                 continue;
             }
-
             if (c[i] > 65280 && c[i] < 65375) {
-                // //其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
-                c[i] = (char) (c[i] - 65248);
+                c[i] = (char) (c[i] - 65248); // 全角字符转半角
             }
+            // 特殊处理中文全角标点
+            if (c[i] == '，') c[i] = ',';
+            if (c[i] == '。') c[i] = '.';
         }
-
         return new String(c);
     }
 

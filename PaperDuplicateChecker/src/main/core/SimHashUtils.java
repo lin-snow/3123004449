@@ -16,6 +16,10 @@ public class SimHashUtils {
      * @return
      */
     public static BigInteger generateSimHash(String text) {
+        if (text == null || text.isEmpty()) {
+            return BigInteger.ZERO;
+        }
+
         // 分词： 将文本分解为特征（词或短语）。
         String[] NGrams = TextPreprocessor.genNGrams(text);
 
