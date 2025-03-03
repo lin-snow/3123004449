@@ -12,7 +12,7 @@ public class FileUtil {
      * @return
      * @throws FileNotFoundException
      */
-    public static String readFile(String filePath) throws FileNotFoundException {
+    public static String readFile(String filePath) {
         StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8))) {
