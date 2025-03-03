@@ -3,8 +3,7 @@ package main.core;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SimHashUtils {
     private static final int HASH_SIZE = 128;
@@ -108,5 +107,33 @@ public class SimHashUtils {
     public static double getSimilarity(BigInteger hash1, BigInteger hash2) {
         int distance = hammingDistance(hash1, hash2);
         return ((double)(HASH_SIZE - distance) / (double)HASH_SIZE);
+    }
+
+    /**
+     * 计算 Jaccard 相似度
+     */
+    public static double getJaccardSimilarity(String text1, String text2) {
+        if ((text1 == null || text1.isEmpty()) && (text2 == null || text2.isEmpty())) {
+            return 1.0; // 两个空文本视为完全相似
+        }
+        if (text1 == null || text1.isEmpty() || text2 == null || text2.isEmpty()) {
+            return 0.0; // 一个为空，一个不为空，相似度为 0
+        }
+
+        String[] nGrams1 = TextPreprocessor.genNGrams(text1);
+        String[] nGrams2 = TextPreprocessor.genNGrams(text2);
+
+        Set<String> set1 = new HashSet<>(Arrays.asList(nGrams1));
+        Set<String> set2 = new HashSet<>(Arrays.asList(nGrams2));
+
+        int intersection = 0;
+        for (String nGram : set1) {
+            if (set2.contains(nGram)) {
+                intersection++;
+            }
+        }
+        int union = set1.size() + set2.size() - intersection;
+
+        return union == 0 ? 1.0 : (double) intersection / union;
     }
 }

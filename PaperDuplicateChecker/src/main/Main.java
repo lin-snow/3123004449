@@ -36,7 +36,7 @@ public class Main {
 //            System.out.println(hash1);
 //            System.out.println(hash2);
             double similarity = SimHashUtils.getSimilarity(hash1, hash2);
-            String result = String.format("%.2f", similarity);
+            String result = String.format("%.2f", similarity * 0.4 + SimHashUtils.getJaccardSimilarity(originalContent, plagiarizedContent) * 0.6);
             System.out.printf("相似度：" + result);
 
             // 将结果写入文件
