@@ -7,6 +7,16 @@
 
 ---
 
+# 如何使用？
+
+使用**相对路径**：
+
+```
+java -jar Main.jar <原版文件路径> <抄袭文件路径> <答案文件路径>
+```
+
+---
+
 # PSP2.1
 
 | PSP2.1                                    | Personal Software Process Stages | 预估耗时（分钟） | 实际耗时（分钟） |
